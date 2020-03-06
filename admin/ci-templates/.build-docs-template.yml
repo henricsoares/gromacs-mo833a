@@ -1,7 +1,11 @@
 .configure-docs-template:
   # Built by admin/dockerfiles/ci-docs-clang
   # TODO this should be organized more like the current documentation.py script
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
+=======
+  image: gromacs/ci-docs:2020
+>>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
   stage: configure-build
   only:
     refs:
@@ -70,6 +74,7 @@
 .build-docs-binary-template:
   # Built by admin/dockerfiles/ci-docs-clang
   # TODO this should be organized more like the current documentation.py script
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
   only:
     refs:
@@ -77,6 +82,9 @@
       - pushes
       - schedules
       - merge_requests
+=======
+  image: gromacs/ci-docs:2020
+>>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
   script:
     - cd $BUILD_DIR
     - cmake --build . --target gmx -- -j8
@@ -91,6 +99,7 @@
 .build-docs-webpage-template:
   # Built by admin/dockerfiles/ci-docs-clang
   # TODO this should be organized more like the current documentation.py script
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
   only:
     refs:
@@ -98,6 +107,9 @@
       - pushes
       - schedules
       - merge_requests
+=======
+  image: gromacs/ci-docs:2020
+>>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
   variables:
     KUBERNETES_CPU_LIMIT: 4
     KUBERNETES_CPU_REQUEST: 2
@@ -131,7 +143,11 @@
 .configure-docs-release-template:
   # Built by admin/dockerfiles/ci-docs-clang
   # TODO this should be organized more like the current documentation.py script
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
+=======
+  image: gromacs/ci-docs:2020
+>>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
   stage: release-configure
   variables:
     KUBERNETES_CPU_LIMIT: 1

@@ -182,6 +182,7 @@
 # Redmine #3361
 .archive-build-template:
   # Dockerfiles are from dockerhub, user eriklindahl
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
   only:
     refs:
@@ -189,6 +190,10 @@
       - pushes
       - schedules
       - merge_requests
+=======
+  image: gromacs/ci-docs:2020
+  variables:
+>>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
   variables:
     KUBERNETES_CPU_LIMIT: 4
     KUBERNETES_CPU_REQUEST: 2
