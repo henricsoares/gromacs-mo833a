@@ -183,6 +183,7 @@
 .archive-build-template:
   # Dockerfiles are from dockerhub, user eriklindahl
 <<<<<<< HEAD
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
   only:
     refs:
@@ -192,6 +193,9 @@
       - merge_requests
 =======
   image: gromacs/ci-docs:2020
+=======
+  image: gromacs/ci-docs-clang:2020
+>>>>>>> 0516e09e1... Fix image mixup for GItlab doc builds
   variables:
 >>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
   variables:

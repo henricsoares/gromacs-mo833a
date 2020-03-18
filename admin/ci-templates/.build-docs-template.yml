@@ -2,10 +2,14 @@
   # Built by admin/dockerfiles/ci-docs-clang
   # TODO this should be organized more like the current documentation.py script
 <<<<<<< HEAD
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
 =======
   image: gromacs/ci-docs:2020
 >>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
+=======
+  image: gromacs/ci-docs-clang:2020
+>>>>>>> 0516e09e1... Fix image mixup for GItlab doc builds
   stage: configure-build
   only:
     refs:
@@ -75,6 +79,7 @@
   # Built by admin/dockerfiles/ci-docs-clang
   # TODO this should be organized more like the current documentation.py script
 <<<<<<< HEAD
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
   only:
     refs:
@@ -85,6 +90,9 @@
 =======
   image: gromacs/ci-docs:2020
 >>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
+=======
+  image: gromacs/ci-docs-clang:2020
+>>>>>>> 0516e09e1... Fix image mixup for GItlab doc builds
   script:
     - cd $BUILD_DIR
     - cmake --build . --target gmx -- -j8
@@ -100,6 +108,7 @@
   # Built by admin/dockerfiles/ci-docs-clang
   # TODO this should be organized more like the current documentation.py script
 <<<<<<< HEAD
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
   only:
     refs:
@@ -110,6 +119,9 @@
 =======
   image: gromacs/ci-docs:2020
 >>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
+=======
+  image: gromacs/ci-docs-clang:2020
+>>>>>>> 0516e09e1... Fix image mixup for GItlab doc builds
   variables:
     KUBERNETES_CPU_LIMIT: 4
     KUBERNETES_CPU_REQUEST: 2
@@ -144,10 +156,14 @@
   # Built by admin/dockerfiles/ci-docs-clang
   # TODO this should be organized more like the current documentation.py script
 <<<<<<< HEAD
+<<<<<<< HEAD
   image: gromacs/ci-docs-clang:2020
 =======
   image: gromacs/ci-docs:2020
 >>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
+=======
+  image: gromacs/ci-docs-clang:2020
+>>>>>>> 0516e09e1... Fix image mixup for GItlab doc builds
   stage: release-configure
   variables:
     KUBERNETES_CPU_LIMIT: 1
