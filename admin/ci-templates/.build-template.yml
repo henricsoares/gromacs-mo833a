@@ -191,6 +191,7 @@
       - pushes
       - schedules
       - merge_requests
+<<<<<<< HEAD
 =======
   image: gromacs/ci-docs:2020
 =======
@@ -198,6 +199,8 @@
 >>>>>>> 0516e09e1... Fix image mixup for GItlab doc builds
   variables:
 >>>>>>> cb800bcab... Distinguish Docker images for different release requirements.
+=======
+>>>>>>> 6f2e9f3b4... Add required Infrastructure for Gitlab merges
   variables:
     KUBERNETES_CPU_LIMIT: 4
     KUBERNETES_CPU_REQUEST: 2
