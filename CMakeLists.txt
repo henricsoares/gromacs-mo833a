@@ -106,7 +106,7 @@ if(CMAKE_CONFIGURATION_TYPES)
 +                  	OUTPUT_NAME "gmxapi${GMX_LIBS_SUFFIX}"
                    	SOVERSION ${GMXAPI_MAJOR}
                    	VERSION ${GMXAPI_RELEASE}
-                   	)
+                   	) 
         FORCE)
 endif()
 set(build_types_with_explicit_flags RELEASE DEBUG RELWITHDEBINFO RELWITHASSERT MINSIZEREL PROFILE)
