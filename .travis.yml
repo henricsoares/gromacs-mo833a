@@ -16,7 +16,7 @@ install:
 before_script:
   - mkdir build
   - cd build
-  - cmake .. -DGMX_BUILD_OWN_FFTW=ON
+  - cmake ..
 
 script:
   - make
