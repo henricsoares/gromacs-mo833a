@@ -1,8 +1,17 @@
 dist: trusty
 sudo: false
 language: cpp
-compiler: 
-  - gcc
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
+env:
+        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+
+before_install:
+    - eval "${MATRIX_EVAL}"
 
 install:
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
@@ -16,7 +25,7 @@ install:
 before_script:
   - mkdir build
   - cd build
-  - cmake ..
+  - cmake .. -DGMX_BUILD_OWN_FFTW=ON 
 
 script:
   - make
