@@ -102,7 +102,11 @@ if(CMAKE_CONFIGURATION_TYPES)
     list(APPEND CMAKE_CONFIGURATION_TYPES "RelWithAssert" "Reference")
     list(REMOVE_DUPLICATES CMAKE_CONFIGURATION_TYPES)
     set(CMAKE_CONFIGURATION_TYPES "${CMAKE_CONFIGURATION_TYPES}" CACHE STRING
-        "List of configuration types"
+        set_target_properties(gmxapi PROPERTIES
++                  	OUTPUT_NAME "gmxapi${GMX_LIBS_SUFFIX}"
+                   	SOVERSION ${GMXAPI_MAJOR}
+                   	VERSION ${GMXAPI_RELEASE}
+                   	)
         FORCE)
 endif()
 set(build_types_with_explicit_flags RELEASE DEBUG RELWITHDEBINFO RELWITHASSERT MINSIZEREL PROFILE)
