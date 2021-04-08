@@ -1,5 +1,4 @@
 dist: trusty
-sudo: false
 language: cpp
 addons:
   apt:
@@ -29,6 +28,6 @@ before_script:
 
 script:
   - make
-  - make install
+  - sudo make install
   - source /usr/local/gromacs/bin/GMXRC
 
