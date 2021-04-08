@@ -1,0 +1,8 @@
+dist: focal
+sudo: false
+language: cpp
+
+script:
+  - cmmake .
+  - cmake --build . -- -j2
+  
