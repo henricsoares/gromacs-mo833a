@@ -1,8 +1,7 @@
-dist: focal
+dist: trusty
 sudo: false
 language: cpp
 
 script:
   - cmmake .
   - cmake --build . -- -j2
-  
