@@ -9,7 +9,6 @@ apt-get update; \
 apt-get --assume-yes install build-essential cmake valgrind linux-perf; \
 apt-get clean; \
 cmake ..  -DGMX_BUILD_OWN_FFTW=ON; \
-# cmake .. -DGMX_BUILD_OWN_FFTW=ON; 
 make; make install; \
 chmod +x /usr/local/gromacs/bin/gmx
 
