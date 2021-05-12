@@ -1,0 +1,39 @@
+Crie o apelido "gmx" como descrito acima e execute novamente o comando:
+
+alias exp4="docker run -it --user=$(id -u):$(id -g) -v ${PWD}:${PWD} -w ${PWD} --rm SEUCONTAINER:latest"
+
+Execute o comando:
+
+exp4 gmx pdb2gmx -f 6LVN.pdb -o 6LVN_processed.gro -water spce
+
+Quando solicitado, selecione a opção 15!
+
+Defina a “caixa” no qual a molécula, os ions e a água irão estar:
+
+exp4 gmx editconf -f 6LVN_processed.gro -o 6LVN_newbox.gro -c -d 1.0 -bt cubic
+
+Adicione o solvente (água) na caixa:
+
+exp4 gmx solvate -cp 6LVN_newbox.gro -cs spc216.gro -o 6LVN_solv.gro -p topol.top
+
+Adicione os íons na caixa:
+
+exp4 gmx grompp -f ions.mdp -c 6LVN_solv.gro -p topol.top -o ions.tpr
+exp4 gmx genion -s ions.tpr -o 6LVN_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+Selecione a opção 13.
+
+Gere a simulação:
+
+exp4 gmx grompp -f ions.mdp -c 6LVN_solv_ions.gro -p topol.top -o em.tpr
+
+Execute a simulação:
+
+exp4 perf record -g gmx mdrun -v -deffnm em // para ferramenta perf
+exp4 valgrind --tool=callgrind gmx mdrun -v -deffnm em // para ferramenta valgrind
+
+Para visualizar o perfil da aplicação:
+
+exp4 perf report // para ferramenta perf
+exp4 callgrind_annotate callgrind.out.1 // para ferramenta valgrind
+
